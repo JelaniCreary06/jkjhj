@@ -67,12 +67,19 @@ document.getElementById('startGame').addEventListener('click', () => {
 
 document.getElementById('howToPlay').addEventListener('click', () => {
     hideStartButtons();
+    document.getElementById('howToPlayText').style.display = "flex";
+    document.getElementById('closeButton').style.display = "flex";
 });
+
+document.getElementById('closeButton').addEventListener('click', (b) => {
+    showStartButtons();
+    document.getElementById('howToPlayText').style.display = "none";
+    document.getElementById('closeButton').style.display = "none";
+})
 
 document.getElementById('click').addEventListener('click', () => {
     document.getElementById('toChange').src = "http://" + window.location.host + "/src/style/images/unk.png";
 })
-
 
 function hideStartButtons() {
     const buttonsToHide = document.querySelectorAll('.startBtn');
@@ -80,6 +87,15 @@ function hideStartButtons() {
 
     buttonsToHide.forEach( b => {
         b.style.display = "none";
+    });
+}
+
+function showStartButtons() {
+    const buttonsToShow= document.querySelectorAll('.startBtn');
+    console.log(buttonsToShow);
+
+    buttonsToShow.forEach( b => {
+        b.style.display = "flex";
     });
 }
 console.log(window.location.host)

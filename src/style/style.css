@@ -12,22 +12,18 @@ body {
     min-height: 100vh;
 }
 
-#howToPlayText {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    min-height: 100vh;
+.stonePiles {
+    background-color:  rgba(255,255,255,0);
 }
 
-.howToPlayDiv {
-    display: block;
-    align-items: center;
-    text-align: center;
-    min-height: 100vh;
-    top: 300px;
+#howToPlayText {
+    display: none;
 }
+
+#closeButton {
+    display: none;
+}
+
 textarea {
     display: block;
     margin-left: auto;

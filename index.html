@@ -10,9 +10,6 @@
     <div class="buttonControl">
         <button class="startBtn" id="howToPlay">How to Play</button>
         <button class="startBtn" id="startGame">Start gaMe</button>
-    </div>
-    
-    <div class="howToPlayDiv">
         <textarea id="howToPlayText" readonly>
             To win, all you have to do is avoid taking the last stone from the last pile!
             On your turn, you can take as many stones as you want from any pile.
@@ -27,10 +24,22 @@
             gloob (the other goblin) does all the decision making, they're tough oppenents.
         </textarea>
         <button id="closeButton">Close</button>
+
+        <div class="stonePileContainer">
+            <button class="stonePiles" id="stonePile1" type="submit">
+                <img id="t" src="src/style/images/gloob.png" alt="stone pile">
+            </button>
+            <button class="stonePiles" id="stonePile2" type="submit">
+                <img id="" src="src/style/images/gloob.png" alt="stone pile">
+            </button>
+            <button class="stonePiles" id="stonePile3" type="submit">
+                <img id="" src="src/style/images/gloob.png" alt="stone pile">
+            </button>
+        </div>
+        <div class="gameControlButtons">
+            <button></button>
+        </div>
     </div>
-    <button id="click" type="submit">
-        <img id="toChange" src="src/style/images/gloob.png" alt="goblin image">
-    </button>
 
     <script src="src/scripts/stoneGame.js"></script>
 </body>
