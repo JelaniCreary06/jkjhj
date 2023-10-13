@@ -1,6 +1,6 @@
 let currentGame = 0;
 
-let activeStonePiles = [], activePlayers = [];
+let activeStonePiles = [], activePlayers = [], stonePileButtons = [];
 
 function init() {
     activeStonePiles.splice(0, activeStonePiles.length);
@@ -10,11 +10,11 @@ function init() {
 
     for (i = 0; i < 3; i++) {
         activeStonePiles.push(new StonePile(currentGame));
+        stonePileButtons.push(document.getElementById(`stonePile${i+1}`));
     }
 
+    console.log(stonePileButtons)
     console.log(activeStonePiles)
-
-    
 }
 
 class Player {
@@ -62,7 +62,17 @@ class StonePile {
 }
 
 document.getElementById('startGame').addEventListener('click', () => {
-    hideStartButtons();
+    startGame();
+});
+
+document.querySelectorAll('.pileImages').forEach((stonePile) => {
+    stonePile.addEventListener('click', () => {
+        
+    });
+});
+
+document.getElementById('resetButton').addEventListener('click', () => {
+    location.reload();
 });
 
 document.getElementById('howToPlay').addEventListener('click', () => {
@@ -77,9 +87,11 @@ document.getElementById('closeButton').addEventListener('click', (b) => {
     document.getElementById('closeButton').style.display = "none";
 })
 
+/*
 document.getElementById('click').addEventListener('click', () => {
     document.getElementById('toChange').src = "http://" + window.location.host + "/src/style/images/unk.png";
 })
+*/
 
 function hideStartButtons() {
     const buttonsToHide = document.querySelectorAll('.startBtn');
@@ -97,6 +109,16 @@ function showStartButtons() {
     buttonsToShow.forEach( b => {
         b.style.display = "flex";
     });
+}
+
+function startGame() {
+    hideStartButtons();
+
+    document.querySelectorAll('.gameElements').forEach( div => {
+        div.style.display = "flex";
+    });
+
+    init();
 }
 console.log(window.location.host)
 console.log("Script loaded.");
